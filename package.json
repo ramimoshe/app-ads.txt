@@ -1,0 +1,30 @@
+{
+  "name": "app-ads.txt",
+  "version": "0.0.1",
+  "description": "app-ads.txt crawler according to \"IAB Technology Laboratory\"",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json .",
+    "test": "npm run lint && jest --coverage --runInBand --config jest.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramimoshe/app-ads.txt.git"
+  },
+  "author": "Rami Moshe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramimoshe/app-ads.txt/issues"
+  },
+  "homepage": "https://github.com/ramimoshe/app-ads.txt#readme",
+  "dependencies": {
+    "ads.txt": "^0.3.0",
+    "bluebird": "^3.5.3",
+    "lodash": "^4.17.11",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "jest": "^22.1.2",
+    "superagent-mocker": "^0.5.2"
+  }
+}

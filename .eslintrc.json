@@ -1,0 +1,69 @@
+{
+  "env"          : {
+    "es6"    : true,
+    "node"   : true,
+    "browser": true
+  },
+  "globals"      : {
+    "angular"   : true,
+    "_"         : true,
+    "test"      : true,
+    "describe"  : true,
+    "beforeEach": true,
+    "afterEach" : true,
+    "after"     : true,
+    "before"    : true,
+    "it"        : true,
+    "$"         : true,
+    "suite"     : true,
+    "expect"    : true
+  },
+  "extends"      : "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion" : 2017,
+    "sourceType"  : "module",
+    "ecmaFeatures": {
+      "jsx"                         : true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules"        : {
+    "indent"         : [
+      "error",
+      4,
+      {
+        "SwitchCase"        : 1,
+        "MemberExpression"  : 1,
+        "VariableDeclarator": {
+          "var"  : 8,
+          "let"  : 8,
+          "const": 8
+        },
+        "ArrayExpression"   : 1,
+        "ObjectExpression"  : 1,
+        "FunctionDeclaration": {
+          "parameters": "first"
+        },
+        "CallExpression": {
+          "arguments": "first"
+        },
+        "FunctionExpression": {
+          "parameters": "first"
+        }
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes"         : [
+      "error",
+      "single"
+    ],
+    "semi"           : [
+      "error",
+      "always"
+    ],
+    "no-console"     : 0
+  }
+}
