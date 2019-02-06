@@ -1,11 +1,11 @@
 {
-  "name": "app-ads.txt",
+  "name": "app-ads-txt",
   "version": "0.0.1",
   "description": "app-ads.txt crawler according to \"IAB Technology Laboratory\"",
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.json .",
-    "test": "npm run lint && jest --coverage --runInBand --config jest.config.json"
+    "test": "npm run lint && jest --env=node --coverage --runInBand --config jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "devDependencies": {
     "jest": "^22.1.2",
     "superagent-mocker": "^0.5.2"
+  },
+  "engines": {
+    "node": ">= 8"
   }
 }
