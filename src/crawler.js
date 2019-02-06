@@ -60,7 +60,12 @@ async function fetchByHttpsOrHttp(url) {
 }
 
 async function fetchUrl(url) {
-    const response      = await request.get(url);
+    const response      = await request
+        .get(url)
+        .timeout({
+            response: 6000,  // Wait 6 seconds for the server to start sending,
+            deadline: 60000, // Allow 1 minute for the file to finish loading.
+        });
     const appAdsContent = parseAdsTxt(response.body);
     return _.isEmpty(appAdsContent.fields) ? createResponse() : createResponse(url, appAdsContent);
 }
