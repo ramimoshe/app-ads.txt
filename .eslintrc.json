@@ -32,24 +32,30 @@
       "error",
       4,
       {
-        "SwitchCase"        : 1,
-        "MemberExpression"  : 1,
-        "VariableDeclarator": {
+        "SwitchCase"         : 1,
+        "MemberExpression"   : 1,
+        "VariableDeclarator" : {
           "var"  : 8,
           "let"  : 8,
           "const": 8
         },
-        "ArrayExpression"   : 1,
-        "ObjectExpression"  : 1,
+        "ArrayExpression"    : 1,
+        "ObjectExpression"   : 1,
         "FunctionDeclaration": {
           "parameters": "first"
         },
-        "CallExpression": {
+        "CallExpression"     : {
           "arguments": "first"
         },
-        "FunctionExpression": {
+        "FunctionExpression" : {
           "parameters": "first"
         }
+      }
+    ],
+    "no-empty"       : [
+      "error",
+      {
+        "allowEmptyCatch": true
       }
     ],
     "linebreak-style": [

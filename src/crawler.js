@@ -4,7 +4,7 @@ const URL             = require('url').URL;
 const Promise         = require('bluebird');
 const request         = require('superagent');
 const _               = require('lodash/fp');
-const { parseAdsTxt } = require("ads.txt");
+const { parseAdsTxt } = require('ads.txt');
 
 
 exports.crawlData = url => {
@@ -48,8 +48,9 @@ async function fetchInRootDomainWith2PublicSuffix(url) {
 
 async function fetchByHttpsOrHttp(url) {
     try {
-        return await fetchUrl(`https://${url}`)
+        return await fetchUrl(`https://${url}`);
     } catch (error) {
+
     }
 
     return await fetchUrl(`http://${url}`);
@@ -65,5 +66,5 @@ function createResponse(appAdsUrl = '', appAdsFileContent = '') {
     return {
         appAdsUrl: appAdsUrl,
         data     : appAdsFileContent
-    }
+    };
 }
