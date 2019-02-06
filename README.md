@@ -35,6 +35,9 @@ output:
 }
 ```
 
+### Exceptions
+* ERR_INVALID_URL: on invalid input url
+
 ### How it works (by "IAB Technology Laboratory")
 Follow these steps to transform the developer URL into a path to crawl for locating an appads.
 txt file.
