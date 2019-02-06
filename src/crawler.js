@@ -7,10 +7,10 @@ const _               = require('lodash/fp');
 const { parseAdsTxt } = require('ads.txt');
 
 
-exports.crawlData = url => {
+exports.crawlData = async url => {
     try {
         const parsedUrl = new URL(url);
-        return Promise.any([
+        return await Promise.any([
             fetchByBaselineUrl(parsedUrl),
             fetchByRemovingFirstSubDomain(parsedUrl),
             fetchInRootDomainWith1PublicSuffix(parsedUrl),
@@ -53,7 +53,6 @@ async function fetchByHttpsOrHttp(url) {
     try {
         return await fetchUrl(`https://${url}`);
     } catch (error) {
-
     }
 
     return await fetchUrl(`http://${url}`);

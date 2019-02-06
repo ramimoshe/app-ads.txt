@@ -8,12 +8,44 @@ const crawler        = require('../../src/crawler');
 
 describe('crawler', function () {
 
+    describe('Test invalid inputs', () => {
+        test('crawlData - invalid url - should throw ERR_INVALID_URL exception', async () => {
+            try {
+                await crawler.crawlData('invalid');
+            } catch (error) {
+                expect(error.code).toEqual('ERR_INVALID_URL');
+            }
+        });
+    });
+
+    describe('app-ads.txt not found', () => {
+        test('crawlData - valid url - should return an empty content', async () => {
+            await Promise.each(['http', 'https'], async protocol => {
+                superagentmock.clearRoutes();
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
+
+                const url    = `${protocol}://example.com/test`;
+                const result = await crawler.crawlData(url);
+
+                expect(result).toEqual({
+                    appAdsUrl: '',
+                    data     : ''
+                });
+            });
+        });
+    });
+
     describe('Test baseline developer URL - ' +
         'This test illustrates the baseline URL without any subdomain.', () => {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -46,6 +78,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -82,6 +117,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -118,6 +156,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://subdomain.example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -147,6 +188,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -183,6 +227,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://subdomain.example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -212,6 +259,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -249,6 +299,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://subdomain.example.co.uk/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -278,6 +331,9 @@ describe('crawler', function () {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
                 const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
+                superagentmock.get('*', () => {
+                    throw new Error('not found');
+                });
                 superagentmock.get(`${protocol}://example.co.uk/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
