@@ -16,6 +16,25 @@ app-ads.txt crawler according to "IAB Technology Laboratory"
     const appAdsTxtData = appAdsTxtCrawler.crawlData('example.com');
 ```
 
+### Example of usage
+input: example.com/app-ads.txt
+output:
+```json
+{
+    "appAdsUrl": "https://example.com/app-ads.txt",
+    "data"     : {
+        "variables": {},
+        "fields"   :
+            [{
+                "domain"                : "example.com",
+                "publisherAccountID"    : "104023",
+                "accountType"           : "DIRECT",
+                "certificateAuthorityID": "79929e88b2ba73bc"
+            }]
+    }
+}
+```
+
 ### How it works (by "IAB Technology Laboratory")
 Follow these steps to transform the developer URL into a path to crawl for locating an appads.
 txt file.

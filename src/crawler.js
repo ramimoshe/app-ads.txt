@@ -17,6 +17,9 @@ exports.crawlData = url => {
             fetchInRootDomainWith2PublicSuffix(parsedUrl)
         ]);
     } catch (error) {
+        if (error.code === 'ERR_INVALID_URL') {
+            throw error;
+        }
         return createResponse();
     }
 };
@@ -24,26 +27,26 @@ exports.crawlData = url => {
 // www.rami.com -> www.rami.com
 async function fetchByBaselineUrl(url) {
     const appAdsUrl = `${url.hostname}/app-ads.txt`;
-    return await fetchByHttpsOrHttp(appAdsUrl);
+    return fetchByHttpsOrHttp(appAdsUrl);
 }
 
 // a.b.c.example.com -> b.c.example.com
 async function fetchByRemovingFirstSubDomain(url) {
     // try to fetch root domain
     const appAdsUrl = `${url.hostname.replace(/^[^.]+\./g, '')}/app-ads.txt`;
-    return await fetchByHttpsOrHttp(appAdsUrl);
+    return fetchByHttpsOrHttp(appAdsUrl);
 }
 
 // a.b.c.example.com -> example.com
 async function fetchInRootDomainWith1PublicSuffix(url) {
     const appAdsUrl = `${url.hostname.split('.').slice(-2).join('.')}/app-ads.txt`;
-    return await fetchByHttpsOrHttp(appAdsUrl);
+    return fetchByHttpsOrHttp(appAdsUrl);
 }
 
 // a.b.c.example.co.il -> example.co.il
 async function fetchInRootDomainWith2PublicSuffix(url) {
     const appAdsUrl = `${url.hostname.split('.').slice(-3).join('.')}/app-ads.txt`;
-    return await fetchByHttpsOrHttp(appAdsUrl);
+    return fetchByHttpsOrHttp(appAdsUrl);
 }
 
 async function fetchByHttpsOrHttp(url) {

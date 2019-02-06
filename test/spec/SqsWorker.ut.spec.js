@@ -13,7 +13,7 @@ describe('crawler', function () {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -29,7 +29,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -45,7 +45,7 @@ describe('crawler', function () {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -65,7 +65,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -81,7 +81,7 @@ describe('crawler', function () {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -101,7 +101,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -117,7 +117,7 @@ describe('crawler', function () {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://subdomain.example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -133,7 +133,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -146,7 +146,7 @@ describe('crawler', function () {
         test('crawlData - valid url without data on subdomain - should return app-ads.txt content from root domain', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -166,7 +166,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -182,7 +182,7 @@ describe('crawler', function () {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://subdomain.example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -198,7 +198,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -211,7 +211,7 @@ describe('crawler', function () {
         test('crawlData - valid url without data on subdomain - should return app-ads.txt content from root domain', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -231,7 +231,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -248,7 +248,7 @@ describe('crawler', function () {
         test('crawlData - valid url - should return app-ads.txt content', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://subdomain.example.co.uk/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -264,7 +264,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
@@ -277,7 +277,7 @@ describe('crawler', function () {
         test('crawlData - valid url without data on subdomain - should return app-ads.txt content from root domain', async () => {
             await Promise.each(['http', 'https'], async protocol => {
                 superagentmock.clearRoutes();
-                const responseDataMock = 'ironsrc.com,104023,DIRECT,79929e88b2ba73bc';
+                const responseDataMock = 'rami.com,104023,DIRECT,79929e88b2ba73bc';
                 superagentmock.get(`${protocol}://example.co.uk/app-ads.txt`, () => {
                     return {
                         body: responseDataMock
@@ -297,7 +297,7 @@ describe('crawler', function () {
                         variables: {},
                         fields   :
                             [{
-                                domain                : 'ironsrc.com',
+                                domain                : 'rami.com',
                                 publisherAccountID    : '104023',
                                 accountType           : 'DIRECT',
                                 certificateAuthorityID: '79929e88b2ba73bc'
