@@ -48,7 +48,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -83,7 +83,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -122,7 +122,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -161,7 +161,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://subdomain.example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -193,7 +193,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -232,7 +232,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://subdomain.example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -264,7 +264,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://example.com/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -304,7 +304,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://subdomain.example.co.uk/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 
@@ -336,7 +336,7 @@ describe('crawler', function () {
                 });
                 superagentmock.get(`${protocol}://example.co.uk/app-ads.txt`, () => {
                     return {
-                        body: responseDataMock
+                        text: responseDataMock
                     };
                 });
 

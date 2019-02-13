@@ -65,7 +65,7 @@ async function fetchUrl(url) {
             response: 6000,  // Wait 6 seconds for the server to start sending,
             deadline: 60000, // Allow 1 minute for the file to finish loading.
         });
-    const appAdsContent = parseAdsTxt(response.body);
+    const appAdsContent = parseAdsTxt(response.text);
     return _.isEmpty(appAdsContent.fields) ? createResponse() : createResponse(url, appAdsContent);
 }
 
