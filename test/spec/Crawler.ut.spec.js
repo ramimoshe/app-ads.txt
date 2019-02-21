@@ -3,14 +3,15 @@
 const Promise        = require('bluebird');
 const request        = require('superagent');
 const superagentmock = require('superagent-mocker')(request);
-const crawler        = require('../../src/crawler');
+const Crawler        = require('../../src/Crawler');
 
 
-describe('crawler', function () {
+describe('Crawler', function () {
 
     describe('Test invalid inputs', () => {
         test('crawlData - invalid url - should throw ERR_INVALID_URL exception', async () => {
             try {
+                const crawler = new Crawler();
                 await crawler.crawlData('invalid');
             } catch (error) {
                 expect(error.code).toEqual('ERR_INVALID_URL');
@@ -26,8 +27,9 @@ describe('crawler', function () {
                     throw new Error('not found');
                 });
 
-                const url    = `${protocol}://example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: '',
@@ -52,8 +54,9 @@ describe('crawler', function () {
                     };
                 });
 
-                const url    = `${protocol}://example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://example.com/app-ads.txt`,
@@ -91,8 +94,9 @@ describe('crawler', function () {
                     throw new Error('tried to fetch wrong url');
                 });
 
-                const url    = `${protocol}://www.example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://www.example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://example.com/app-ads.txt`,
@@ -130,8 +134,9 @@ describe('crawler', function () {
                     throw new Error('tried to fetch wrong url');
                 });
 
-                const url    = `${protocol}://m.example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://m.example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://example.com/app-ads.txt`,
@@ -165,8 +170,9 @@ describe('crawler', function () {
                     };
                 });
 
-                const url    = `${protocol}://subdomain.example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://subdomain.example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://subdomain.example.com/app-ads.txt`,
@@ -201,8 +207,9 @@ describe('crawler', function () {
                     throw new Error('tried to fetch wrong url');
                 });
 
-                const url    = `${protocol}://subdomain.example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://subdomain.example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://example.com/app-ads.txt`,
@@ -236,8 +243,9 @@ describe('crawler', function () {
                     };
                 });
 
-                const url    = `${protocol}://another.subdomain.example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://another.subdomain.example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://subdomain.example.com/app-ads.txt`,
@@ -272,8 +280,9 @@ describe('crawler', function () {
                     throw new Error('tried to fetch wrong url');
                 });
 
-                const url    = `${protocol}://another.subdomain.example.com/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://another.subdomain.example.com/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://example.com/app-ads.txt`,
@@ -308,8 +317,9 @@ describe('crawler', function () {
                     };
                 });
 
-                const url    = `${protocol}://another.subdomain.example.co.uk/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://another.subdomain.example.co.uk/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://subdomain.example.co.uk/app-ads.txt`,
@@ -344,8 +354,9 @@ describe('crawler', function () {
                     throw new Error('tried to fetch wrong url');
                 });
 
-                const url    = `${protocol}://another.subdomain.example.co.uk/test`;
-                const result = await crawler.crawlData(url);
+                const url     = `${protocol}://another.subdomain.example.co.uk/test`;
+                const crawler = new Crawler();
+                const result  = await crawler.crawlData(url);
 
                 expect(result).toEqual({
                     appAdsUrl: `${protocol}://example.co.uk/app-ads.txt`,
