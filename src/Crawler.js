@@ -4,17 +4,13 @@ const URL             = require('url').URL;
 const Promise         = require('bluebird');
 const _               = require('lodash/fp');
 const { parseAdsTxt } = require('ads.txt');
-const ProxyAgent      = require('proxy-agent');
+const request         = require('superagent');
+require('superagent-proxy')(request);
 
 
 class Crawler {
     constructor({ proxyUrl } = {}) {
-        this._httpClient = require('superagent');
-
-        if (proxyUrl) {
-            const agent = new ProxyAgent(proxyUrl);
-            this._httpClient.agent(agent);
-        }
+        this.proxyUrl = proxyUrl;
     }
 
     async crawlData(url) {
@@ -69,8 +65,9 @@ class Crawler {
     }
 
     async _fetchUrl(url) {
-        const response      = await this._httpClient
+        const response      = await request
             .get(url)
+            .proxy(this.proxyUrl)
             .timeout({
                 response: 6000,  // Wait 6 seconds for the server to start sending,
                 deadline: 60000, // Allow 1 minute for the file to finish loading.

@@ -12,7 +12,8 @@ app-ads.txt crawler according to "IAB Technology Laboratory"
   
 ### How to use
 ```js
-    const appAdsTxtCrawler = require('app-ads-txt').crawler;
+    const AppAdsTxtCrawler = require('app-ads-txt').Crawler;
+    const appAdsTxtCrawler = new AppAdsTxtCrawler(options);
     const appAdsTxtData = appAdsTxtCrawler.crawlData('example.com');
 ```
 
@@ -32,6 +33,12 @@ output:
                 "certificateAuthorityID": "79929e88b2ba73bc"
             }]
     }
+}
+```
+options: 
+```json
+{
+  "proxyUrl": "http://user:pass@example.com"
 }
 ```
 

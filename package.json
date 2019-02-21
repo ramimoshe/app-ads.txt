@@ -21,8 +21,8 @@
     "ads.txt": "^0.3.0",
     "bluebird": "^3.5.3",
     "lodash": "^4.17.11",
-    "proxy-agent": "^3.0.3",
-    "superagent": "^4.1.0"
+    "superagent": "^4.1.0",
+    "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
     "jest": "^22.1.2",
