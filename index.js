@@ -1,3 +1,3 @@
 'use strict';
 
-exports.crawler = require('./src/crawler');
+exports.crawler = require('./src/Crawler');

@@ -1,6 +1,6 @@
 {
   "name": "app-ads-txt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "app-ads.txt crawler according to \"IAB Technology Laboratory\"",
   "main": "index.js",
   "scripts": {
