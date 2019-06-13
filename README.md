@@ -12,7 +12,7 @@ app-ads.txt crawler according to "IAB Technology Laboratory"
   
 ### How to use
 ```js
-    const AppAdsTxtCrawler = require('app-ads-txt').Crawler;
+    const AppAdsTxtCrawler = require('app-ads-txt').crawler;
     const appAdsTxtCrawler = new AppAdsTxtCrawler(options);
     const appAdsTxtData = appAdsTxtCrawler.crawlData('example.com');
 ```
