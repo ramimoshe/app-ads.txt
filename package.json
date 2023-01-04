@@ -25,7 +25,7 @@
     "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
-    "jest": "^22.1.2",
+    "jest": "^29.3.1",
     "superagent-mocker": "^0.5.2"
   },
   "engines": {
